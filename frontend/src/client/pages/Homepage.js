@@ -1,10 +1,31 @@
-import React, { useState, useEffect } from "react";
-import "../../styles/Homepage.css";
 
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Homepage.css";
+
+
+
+
+const ContactForm = ({ closeForm }) => {
+  return (
+    <div className="contact-form-wrapper">
+      <div className="contact-form-container">
+        <button className="close-button" onClick={closeForm}>X</button>
+        <h2>Contactez-nous</h2>
+        <form>
+          <input type="text" placeholder="Votre nom" required />
+          <input type="email" placeholder="Votre email" required />
+          <textarea placeholder="Votre message" required></textarea>
+          <button type="submit" className="ENVOYER">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 const HomePage = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [hoveredLink, setHoveredLink] = useState(null);
+  const [showContactForm, setShowContactForm] = useState(false); 
   const [hoveredButton, setHoveredButton] = useState(null);
 
   // 🔹 Liste des images pour le diaporama
@@ -86,7 +107,7 @@ const HomePage = () => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
   console.log("Liste des destinations :", destinations);
 
   return (
@@ -94,24 +115,11 @@ const HomePage = () => {
       {/* 🔹 NAVIGATION */}
       <nav className="navbar">
         <h2 className="logo">Fly Agency</h2>
-        <div className="searchContainer">
-          <input type="text" className="search-bar" placeholder="Rechercher un vol..." />
-        </div>
         <ul className="nav-links">
-          {["destinations", "about", "book"].map((link, index) => (
-            <li key={index}>
-              <a
-                href={`#${link}`}
-                className={`nav-link ${hoveredLink === link ? "nav-link-hover" : ""}`}
-                onMouseEnter={() => setHoveredLink(link)}
-                onMouseLeave={() => setHoveredLink(null)}
-              >
-                {link === "destinations" ? "Destinations" : 
-                 link === "about" ? "À propos de nous" : 
-                 "Réserver"}
-              </a>
-            </li>
-          ))}
+          <li><Link to="/vols" className="nav-link">Vols</Link></li>
+          <li><Link to="/search" className="nav-link">Hotel</Link></li>
+          <li><Link to="/signupform" className="nav-link">S'inscrire </Link></li>
+          <li><Link to="/loginform" className="nav-link">Se connecter</Link></li>
         </ul>
       </nav>
 
@@ -179,7 +187,7 @@ const HomePage = () => {
           ))}
         </div>
       </section>
- {/* 🔹 SECTION HÔTELS */}
+
 {/* 🔹 SECTION HÔTELS */}
 <section id="hotels">
   <div className="header2">
@@ -216,20 +224,34 @@ const HomePage = () => {
       <div className="footer-section">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#hotels">Hôtels</a></li>
-          <li><a href="#contact">Contact</a></li>
+         <li><a href="/">Accueil</a></li>
+              <li><Link to="/vols" className="nav-link">Vols</Link></li>
+              <li><Link to="/search" className="nav-link">Hotels</Link></li>
+              <li><Link to="/about" className="nav-link">À propos de nous</Link></li>
+          <li><button className="nav-linkss" onClick={() => setShowContactForm(true)}>Contact</button></li> 
         </ul>
+         {/* Afficher le formulaire de contact si l'état showContactForm est true */}
+      {showContactForm && <ContactForm closeForm={() => setShowContactForm(false)} />}
       </div>
 
       <div className="footer-section">
         <h4>Suivez-nous</h4>
         <div className="social-icons">
-          <a href="#">Facebook<i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#">twitter<i className="fab fa-twitter"></i></a>
-          <a href="#">Linkedin<i className="fab fa-linkedin"></i></a>
+        <Link to="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  Facebook <i className="fab fa-facebook"></i>
+</Link>
+
+<Link to="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+  <i className="fab fa-instagram"></i>
+</Link>
+
+<Link to="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+  Twitter <i className="fab fa-twitter"></i>
+</Link>
+
+<Link to="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+  LinkedIn <i className="fab fa-linkedin"></i>
+</Link>
          
         </div>
         <p className="contact-info">📍 Adresse : 123 Rue Bejaia, Bejaia,Algerie</p>
