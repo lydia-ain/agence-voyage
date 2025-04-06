@@ -1,0 +1,344 @@
+
+body {
+  background-color: #f0f0f0; /* Remplace #f0f0f0 par la couleur que tu veux */
+  font-family: Arial, sans-serif; /* Police de base */
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #000000;
+  height: 400px;
+}
+header h1 {
+  margin-top: 50px;
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #e6e4e4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.form-button {
+  background-color: #000000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 37px;
+  transition: background-color 0.3s ease;
+  margin-top: 29px;
+}
+
+.form-button:hover {
+  background-color: #e4490b;
+}
+
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.form-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 14px;
+  color: #181818;
+}
+
+/* Styles pour le tooltip */
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #e3dede;
+  border-radius: 5px;
+  padding: 10px;
+  top: 350px;
+  left: 710px;
+  width: 250px;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Alignement des éléments du tooltip */
+.tooltip div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.tooltip label {
+  font-weight: bold;
+  flex: 1;
+}
+
+.tooltip input,
+.tooltip select {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Amélioration du bouton "Terminer" */
+.tooltip-button {
+  background-color: #000000;
+  width: 100%;
+  height: 35px;
+  color: aliceblue;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.tooltip-button:hover {
+  background-color: #fe6529;
+}
+/* 🔹 Section des meilleurs hôtels */
+
+.best-hotels {
+  position: relative;
+  width: 100%;
+  margin-right: 50px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden; /* Masquer le défilement vertical */
+}
+
+.hotels-container {
+  display: flex; /* Utilisation du flexbox pour permettre le défilement horizontal */
+  gap: 20px; /* Espacement entre les cartes d'hôtels */
+  overflow-x: auto; /* Permet le défilement horizontal */
+  padding: 10px;
+  scroll-behavior: smooth; /* Ajout d'un effet de défilement fluide */
+}
+
+.hotel-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  flex: 0 0 auto; /* Empêche la carte de se redimensionner */
+  width: 250px; /* Largeur fixe pour chaque carte */
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+.destination-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.flag {
+  margin-left: 8px;
+  font-size: 1.5rem;
+}
+
+
+.stars {
+  font-size: 18px;
+  color: gold;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+}
+.arrow {
+  position: absolute; /* Positionner les flèches sur la section des hôtels */
+  top: 50%;
+  transform: translateY(-50%); /* Centrer verticalement */
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow:hover {
+  color: #e4490b;
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.arrow:active {
+  transform: scale(1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Positionner les flèches à gauche et à droite */
+.left-arrow {
+  left: 10px; /* Positionner la flèche gauche à gauche de la section */
+}
+
+.right-arrow {
+  margin-right: 30px;
+  right: 10px; /* Positionner la flèche droite à droite de la section */
+}
+
+
+/* Style pour la section des Top Hôtels */
+.top-hotels {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.top-hotels h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.top-hotels p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 0;
+}
+/* Styles pour les offres spéciales */
+.special-offers {
+  background: #fff7e6; /* Fond clair */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.offers-container {
+  display: grid; /* Utilisation de la grille pour aligner les hôtels */
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 20px; /* Espacement entre les cartes d'hôtels */
+  padding: 10px;
+}
+
+.offer-card {
+  background: #f9f9f9; /* Fond clair */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.offer-card h4 {
+  color: #e4490b;
+  font-weight: bold;
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.offer-image {
+  width: 100%; /* L'image occupe toute la largeur de son conteneur */
+  height: 200px; /* Définir une hauteur fixe pour que toutes les images soient de la même taille */
+  object-fit: cover; /* Garantit que l'image couvre l'espace sans déformation, elle sera recadrée si nécessaire */
+  border-radius: 5px;
+  margin: 0 auto 15px; /* Centrer l'image horizontalement et ajouter un espace en bas */
+}
+
+
+.stars {
+  font-size: 18px;
+  color: gold;
+}
+
+.price-before {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.price-after {
+  color: #e4490b;
+  font-weight: bold;
+}
+
+/* Positionnement de l'icône de promotion */
+.promo-badge {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  .offers-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petits écrans */
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-container {
+    grid-template-columns: 1fr; /* 1 colonne sur très petits écrans */
+  }
+}
+.details-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #000000; /* Couleur du bouton */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.details-button:hover {
+  background-color: #f98f0d; /* Couleur au survol */
+}
