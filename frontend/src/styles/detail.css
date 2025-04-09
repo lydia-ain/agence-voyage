@@ -1,0 +1,283 @@
+/* Section des commentaires */
+.section-comments {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la section */
+  margin-top: 40px;
+}
+
+/* Style du titre de la section des commentaires */
+.section-comments h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Style des commentaires individuels */
+.comment {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Ombre subtile pour les commentaires */
+  margin-bottom: 20px; /* Espacement entre chaque commentaire */
+}
+
+/* Couleur du nom de l'utilisateur */
+.comment .user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4CAF50; /* Vert pour le nom */
+}
+
+/* Texte des commentaires */
+.comment p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Date et heure du commentaire */
+.comment .comment-date {
+  font-size: 12px;
+  color: #aaa;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Séparateurs entre les commentaires */
+.comment + .comment {
+  border-top: 1px solid #ddd; /* Séparateur entre les commentaires */
+  padding-top: 10px;
+}
+
+/* Style pour les boutons d'action dans les commentaires (répondre, etc.) */
+.comment .actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Boutons d'action (répondre, etc.) */
+.comment .actions button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton d'action */
+.comment .actions button:hover {
+  background-color: #45a049; /* Légère variation de couleur au survol */
+}
+
+/* Icône d'édition et de suppression pour les actions */
+.comment .actions i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: white;
+}
+
+/* Icônes d'édition et suppression au survol */
+.comment .actions i:hover {
+  color: #ff9500;
+}
+
+/* Section des commentaires sur mobile */
+@media screen and (max-width: 768px) {
+  .section-comments h3 {
+    font-size: 20px; /* Réduit la taille du titre sur mobile */
+  }
+
+  .comment {
+    padding: 12px; /* Réduit le padding pour les écrans plus petits */
+  }
+
+  .comment .user-name {
+    font-size: 14px; /* Réduit la taille du nom de l'utilisateur */
+  }
+
+  .comment p {
+    font-size: 13px; /* Réduit la taille du texte des commentaires */
+  }
+
+  .comment .comment-date {
+    font-size: 10px; /* Réduit la taille de la date */
+  }
+}
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; /* Augmente l'espace entre l'image principale et les miniatures */
+    margin: 20px 50px;
+    margin-top: 70px; /* Marge de 50px sur les côtés */
+  }
+  
+  .main-image {
+    flex: 2;
+    width: 100%;
+    max-height: 400px; /* Réduit la hauteur de l'image principale */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .side-images {
+    margin-top: 20px;
+    flex: 0.8; /* Réduit la largeur de la colonne des miniatures */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Augmente l'espace entre les miniatures */
+  }
+  
+  .side-image {
+    width: 100%;
+    height: 80px; /* Réduit la hauteur des miniatures */
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .side-image:hover {
+    transform: scale(1.1);
+  }
+  
+  .detail-content {
+    width: calc(100% - 100px);
+    margin: 30px auto;
+    text-align: left ;
+  }
+  .container2 {
+    background-color:#f0f0f0;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 2px;
+    position:center;
+    margin-left: 110px;
+    border-bottom:10PX;
+    height: auto;
+    margin-bottom: 20px;
+   padding: 20px;
+    
+    
+  }
+  /* Section des équipements */
+.section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Table des équipements */
+.equipments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.equipments-table th,
+.equipments-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.equipments-table i {
+  margin-right: 10px;
+  color: #4CAF50; /* Couleur des icônes */
+  font-size: 20px;
+}
+
+.equipments-table td {
+  font-size: 16px;
+}
+
+/* Le style pour les icônes dans les équipements */
+.equipments-table th {
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+}
+
+  body{
+    background-color: aliceblue;
+  }
+  /* Style général pour le tableau */
+.tableau-hebergements {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* Style pour les en-têtes du tableau */
+.tableau-hebergements th {
+  background-color: #000000;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Style pour les cellules du tableau */
+.tableau-hebergements td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Couleur de fond pour les lignes impaires */
+.tableau-hebergements tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Couleur de fond pour les lignes paires */
+.tableau-hebergements tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Style pour le bouton de sélection dans le tableau */
+.tableau-hebergements button {
+  background-color: #000000;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+.tableau-hebergements button:hover {
+  background-color: #ff9500;
+}
+
+/* Style pour le tableau lorsqu'il est trop large */
+@media screen and (max-width: 768px) {
+  .tableau-hebergements th, .tableau-hebergements td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
